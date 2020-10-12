@@ -5,13 +5,14 @@
 	{%include "headInc.html"%}
 </head>
 <body >
+	<div class="container d-flex justify-content-between">
+	  </div>
 	<div class="row container-fluid">
 		<table class="table table-dark">
 				{% for p in data['hourly']['data'] %}
-				<a href="Test">
 				<div class="card" style="width: 18rem;">
 					<div class="card-body">
-						<img src="static/svg/{{ p['icon'] }}.svg"height="42" width="42">
+						<img src="{{url_for('static',filename='svg/' + p['icon'] + '.svg')}}"height="42" width="42">
 						<h5>{{p['summary']}}</h5> 
 						<p class="card-text">{{ ctime(p['time']) }}</p>      
 					</div>
